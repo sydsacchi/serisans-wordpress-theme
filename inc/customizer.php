@@ -96,6 +96,7 @@ function serisans_customizer_css() {
         h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, blockquote { color: #fff; }
         a:hover { color: #ccc; }
         a:visited { color: #999; }
+		ul.nav-menu { background:#111;}
     </style>
     <?php
     } elseif( in_array(get_theme_mod('color_scheme'), array('light'))) {
@@ -109,9 +110,7 @@ function serisans_customizer_css() {
     <?php
     } else {
         $t = date('H:i:s');
-        #if ($t < "18:00:00") {
-		// server time is one hour behind so I've set the below timing one hour early. Please amend to your needs.
-		if ($t >= "08:00:00" && $t <= "17:00:00") {
+        if ($t >= "08:00:00" && $t <= "17:00:00") {
     ?>
             <style type="text/css">
                 body, .main-navigation ul ul { background: #fff; color: #000;}        
@@ -122,14 +121,15 @@ function serisans_customizer_css() {
     <?php } else { ?>
             <style type="text/css">
                 body, .main-navigation ul ul { -webkit-transition: background 1s ease;
--moz-transition: background 1s ease;
--ms-transition: background 1s ease;
--o-transition: background 1s ease;
-transition: background 1s ease;
+				-moz-transition: background 1s ease;
+				-ms-transition: background 1s ease;
+				-o-transition: background 1s ease;
+				transition: background 1s ease;
                 background: #333!important; color: #fff; }        
                 h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, blockquote { color: #fff; }
                 a:hover { color: #ccc; }
                 a:visited { color: #999; }
+				ul.nav-menu { background:#111;}
             </style>
     <?php }    
     }
